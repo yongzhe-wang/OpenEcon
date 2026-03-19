@@ -39,7 +39,7 @@ const getBase = (): Configuration => ({
     sign: true,
   },
   protocols: {
-    name: "OpenCode",
+    name: "OpenEcon",
     schemes: ["opencode"],
   },
   win: {
@@ -66,28 +66,28 @@ function getConfig() {
     case "dev": {
       return {
         ...base,
-        appId: "ai.opencode.desktop.dev",
-        productName: "OpenCode Dev",
+        appId: "ai.openecon.desktop.dev",
+        productName: "OpenEcon Dev",
         rpm: { packageName: "opencode-dev" },
       }
     }
     case "beta": {
       return {
         ...base,
-        appId: "ai.opencode.desktop.beta",
-        productName: "OpenCode Beta",
+        appId: "ai.openecon.desktop.beta",
+        productName: "OpenEcon Beta",
         protocols: { name: "OpenCode Beta", schemes: ["opencode"] },
-        publish: { provider: "github", owner: "anomalyco", repo: "opencode-beta", channel: "latest" },
+        publish: undefined,
         rpm: { packageName: "opencode-beta" },
       }
     }
     case "prod": {
       return {
         ...base,
-        appId: "ai.opencode.desktop",
-        productName: "OpenCode",
-        protocols: { name: "OpenCode", schemes: ["opencode"] },
-        publish: { provider: "github", owner: "anomalyco", repo: "opencode", channel: "latest" },
+        appId: "ai.openecon.desktop",
+        productName: "OpenEcon",
+        protocols: { name: "OpenEcon", schemes: ["opencode"] },
+        publish: undefined,
         rpm: { packageName: "opencode" },
       }
     }

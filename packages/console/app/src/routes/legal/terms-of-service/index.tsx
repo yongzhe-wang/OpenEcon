@@ -30,15 +30,15 @@ export default function TermsOfService() {
               </p>
 
               <p>
-                Email: <a href="mailto:contact@anoma.ly">contact@anoma.ly</a>
+                Email: <a href="mailto:contact@openecon.ai">contact@openecon.ai</a>
               </p>
 
               <p>
                 These Terms of Use (the "Terms") are a binding contract between you and{" "}
-                <strong>ANOMALY INNOVATIONS, INC.</strong> ("OpenCode," "we" and "us"). Your use of the Services in any
+                <strong>OpenEcon</strong> ("OpenEcon," "we" and "us"). Your use of the Services in any
                 way means that you agree to all of these Terms, and these Terms will remain in effect while you use the
                 Services. These Terms include the provisions in this document as well as those in the Privacy Policy{" "}
-                <a href={language.route("/legal/privacy-policy")}>https://opencode.ai/legal/privacy-policy</a>.{" "}
+                <a href={language.route("/legal/privacy-policy")}>https://openecon.ai/legal/privacy-policy</a>.{" "}
                 <strong>
                   Your use of or participation in certain Services may also be subject to additional policies, rules
                   and/or conditions ("Additional Terms"), which are incorporated herein by reference, and you understand
@@ -84,7 +84,7 @@ export default function TermsOfService() {
               <p>
                 We are constantly trying to improve our Services, so these Terms may need to change along with our
                 Services. We reserve the right to change the Terms at any time, but if we do, we will place a notice on
-                our site located at opencode.ai, send you an email, and/or notify you by some other means.
+                our site located at openecon.ai, send you an email, and/or notify you by some other means.
               </p>
 
               <p>
@@ -102,7 +102,7 @@ export default function TermsOfService() {
               <p>
                 OpenCode takes the privacy of its users very seriously. For the current OpenCode Privacy Policy, please
                 click here{" "}
-                <a href="https://opencode.ai/legal/privacy-policy">https://opencode.ai/legal/privacy-policy</a>.
+                <a href="https://openecon.ai/legal/privacy-policy">https://openecon.ai/legal/privacy-policy</a>.
               </p>
 
               <h3>Children's Online Privacy Protection Act</h3>
@@ -114,7 +114,7 @@ export default function TermsOfService() {
                 attempt to register for or otherwise use the Services or send us any personal information. If we learn
                 we have collected personal information from a child under 13 years of age, we will delete that
                 information as quickly as possible. If you believe that a child under 13 years of age may have provided
-                us personal information, please contact us at <a href="mailto:contact@anoma.ly">contact@anoma.ly</a>.
+                us personal information, please contact us at <a href="mailto:contact@openecon.ai">contact@openecon.ai</a>.
               </p>
 
               <h2 id="what-are-the-basics">What are the basics of using OpenCode?</h2>
@@ -265,7 +265,7 @@ export default function TermsOfService() {
               <p>
                 Certain of our Services, including Zen, may be subject to payments now or in the future (the "Paid
                 Services"). Please see our Paid Services page{" "}
-                <a href={language.route("/zen")}>https://opencode.ai/zen</a> for a description of the current Paid
+                <a href={language.route("/zen")}>https://openecon.ai/zen</a> for a description of the current Paid
                 Services. Please note that any payment terms presented to you in the process of using or signing up for
                 a Paid Service are deemed part of these Terms.
               </p>
@@ -306,7 +306,7 @@ export default function TermsOfService() {
                 CONFIRMED BY US) THAT YOU HAVE TERMINATED THIS AUTHORIZATION OR WISH TO CHANGE YOUR PAYMENT METHOD. SUCH
                 NOTICE WILL NOT AFFECT CHARGES SUBMITTED BEFORE WE REASONABLY COULD ACT. TO TERMINATE YOUR AUTHORIZATION
                 OR CHANGE YOUR PAYMENT METHOD, GO TO ACCOUNT SETTINGS{" "}
-                <a href="https://opencode.ai/auth">https://opencode.ai/auth</a>.
+                <a href="https://openecon.ai/auth">https://openecon.ai/auth</a>.
               </p>
 
               <h3>Free Trials and Other Promotions</h3>
@@ -315,13 +315,13 @@ export default function TermsOfService() {
                 specified time of the trial. You must stop using a Paid Service before the end of the trial period in
                 order to avoid being charged for that Paid Service. If you cancel prior to the end of the trial period
                 and are inadvertently charged for a Paid Service, please contact us at{" "}
-                <a href="mailto:contact@anoma.ly">contact@anoma.ly</a>.
+                <a href="mailto:contact@openecon.ai">contact@openecon.ai</a>.
               </p>
 
               <h2 id="what-if-i-want-to-stop">What if I want to stop using the Services?</h2>
               <p>
                 You're free to do that at any time; please refer to our Privacy Policy{" "}
-                <a href={language.route("/legal/privacy-policy")}>https://opencode.ai/legal/privacy-policy</a>, as well
+                <a href={language.route("/legal/privacy-policy")}>https://openecon.ai/legal/privacy-policy</a>, as well
                 as the licenses above, to understand how we treat information you provide to us after you have stopped
                 using our Services.
               </p>

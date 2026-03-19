@@ -3,10 +3,10 @@
   "displayName": "opencode",
   "description": "opencode for VS Code",
   "version": "1.2.27",
-  "publisher": "sst-dev",
+  "publisher": "openecon",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anomalyco/opencode"
+    "url": ""
   },
   "license": "MIT",
   "icon": "images/icon.png",

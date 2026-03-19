@@ -13,7 +13,7 @@ OpenCode supports both **JSON** and **JSONC** (JSON with Comments) formats.
 
 ```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "model": "anthropic/claude-sonnet-4-5",
   "autoupdate": true,
   "server": {
@@ -151,9 +151,9 @@ The custom directory is loaded after the global config and `.opencode` directori
 
 ## Schema
 
-The server/runtime config schema is defined in [**`opencode.ai/config.json`**](https://opencode.ai/config.json).
+The server/runtime config schema is defined in [**`openecon.ai/config.json`**](https://openecon.ai/config.json).
 
-TUI config uses [**`opencode.ai/tui.json`**](https://opencode.ai/tui.json).
+TUI config uses [**`openecon.ai/tui.json`**](https://openecon.ai/tui.json).
 
 Your editor should be able to validate and autocomplete based on the schema.
 
@@ -165,7 +165,7 @@ Use a dedicated `tui.json` (or `tui.jsonc`) file for TUI-specific settings.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode.ai/tui.json",
+  "$schema": "https://openecon.ai/tui.json",
   "scroll_speed": 3,
   "scroll_acceleration": {
     "enabled": true
@@ -188,7 +188,7 @@ You can configure server settings for the `opencode serve` and `opencode web` co
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "server": {
     "port": 4096,
     "hostname": "0.0.0.0",
@@ -217,7 +217,7 @@ You can manage the tools an LLM can use through the `tools` option.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "tools": {
     "write": false,
     "bash": false
@@ -235,7 +235,7 @@ You can configure the providers and models you want to use in your OpenCode conf
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {},
   "model": "anthropic/claude-sonnet-4-5",
   "small_model": "anthropic/claude-haiku-4-5"
@@ -248,7 +248,7 @@ Provider options can include `timeout`, `chunkTimeout`, and `setCacheKey`:
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "anthropic": {
       "options": {
@@ -279,7 +279,7 @@ Amazon Bedrock supports AWS-specific configuration:
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "provider": {
     "amazon-bedrock": {
       "options": {
@@ -310,7 +310,7 @@ Set your UI theme in `tui.json`.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode.ai/tui.json",
+  "$schema": "https://openecon.ai/tui.json",
   "theme": "tokyonight"
 }
 ```
@@ -325,7 +325,7 @@ You can configure specialized agents for specific tasks through the `agent` opti
 
 ```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "agent": {
     "code-reviewer": {
       "description": "Reviews code for best practices and potential issues",
@@ -351,7 +351,7 @@ You can set the default agent using the `default_agent` option. This determines 
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "default_agent": "plan"
 }
 ```
@@ -368,7 +368,7 @@ You can configure the [share](/docs/share) feature through the `share` option.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "share": "manual"
 }
 ```
@@ -389,7 +389,7 @@ You can configure custom commands for repetitive tasks through the `command` opt
 
 ```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "command": {
     "test": {
       "template": "Run the full test suite with coverage report and show any failures.\nFocus on the failing tests and suggest fixes.",
@@ -415,7 +415,7 @@ Customize keybinds in `tui.json`.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode.ai/tui.json",
+  "$schema": "https://openecon.ai/tui.json",
   "keybinds": {}
 }
 ```
@@ -432,7 +432,7 @@ For large repositories or projects with many submodules, the snapshot system can
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "snapshot": false
 }
 ```
@@ -447,7 +447,7 @@ OpenCode will automatically download any new updates when it starts up. You can 
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "autoupdate": false
 }
 ```
@@ -463,7 +463,7 @@ You can configure code formatters through the `formatter` option.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "formatter": {
     "prettier": {
       "disabled": true
@@ -491,7 +491,7 @@ For example, to ensure that the `edit` and `bash` tools require user approval:
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "permission": {
     "edit": "ask",
     "bash": "ask"
@@ -509,7 +509,7 @@ You can control context compaction behavior through the `compaction` option.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "compaction": {
     "auto": true,
     "prune": true,
@@ -530,7 +530,7 @@ You can configure file watcher ignore patterns through the `watcher` option.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "watcher": {
     "ignore": ["node_modules/**", "dist/**", ".git/**"]
   }
@@ -547,7 +547,7 @@ You can configure MCP servers you want to use through the `mcp` option.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "mcp": {}
 }
 ```
@@ -564,7 +564,7 @@ Place plugin files in `.opencode/plugins/` or `~/.config/opencode/plugins/`. You
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "plugin": ["opencode-helicone-session", "@my-org/custom-plugin"]
 }
 ```
@@ -579,7 +579,7 @@ You can configure the instructions for the model you're using through the `instr
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
 }
 ```
@@ -595,7 +595,7 @@ You can disable providers that are loaded automatically through the `disabled_pr
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "disabled_providers": ["openai", "gemini"]
 }
 ```
@@ -618,7 +618,7 @@ You can specify an allowlist of providers through the `enabled_providers` option
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "enabled_providers": ["anthropic", "openai"]
 }
 ```
@@ -639,7 +639,7 @@ The `experimental` key contains options that are under active development.
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "experimental": {}
 }
 ```
@@ -662,7 +662,7 @@ Use `{env:VARIABLE_NAME}` to substitute environment variables:
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "model": "{env:OPENCODE_MODEL}",
   "provider": {
     "anthropic": {
@@ -685,7 +685,7 @@ Use `{file:path/to/file}` to substitute the contents of a file:
 
 ```json title="opencode.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://openecon.ai/config.json",
   "instructions": ["./custom-instructions.md"],
   "provider": {
     "openai": {

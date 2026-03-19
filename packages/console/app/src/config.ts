@@ -3,11 +3,11 @@
  */
 export const config = {
   // Base URL
-  baseUrl: "https://opencode.ai",
+  baseUrl: "https://openecon.ai",
 
   // GitHub
   github: {
-    repoUrl: "https://github.com/anomalyco/opencode",
+    repoUrl: "https://github.com/openecon/opencode",
     starsFormatted: {
       compact: "120K",
       full: "120,000",
@@ -17,7 +17,7 @@ export const config = {
   // Social links
   social: {
     twitter: "https://x.com/opencode",
-    discord: "https://discord.gg/opencode",
+    discord: "https://discord.gg/openecon",
   },
 
   // Static stats (used on landing page)

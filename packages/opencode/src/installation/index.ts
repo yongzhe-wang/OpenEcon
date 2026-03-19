@@ -25,7 +25,7 @@ export namespace Installation {
   }
 
   async function upgradeCurl(target: string) {
-    const body = await fetch("https://opencode.ai/install").then((res) => {
+    const body = await fetch("https://openecon.ai/install").then((res) => {
       if (!res.ok) throw new Error(res.statusText)
       return res.text()
     })
@@ -154,8 +154,8 @@ export namespace Installation {
   )
 
   async function getBrewFormula() {
-    const tapFormula = await text(["brew", "list", "--formula", "anomalyco/tap/opencode"])
-    if (tapFormula.includes("opencode")) return "anomalyco/tap/opencode"
+    const tapFormula = await text(["brew", "list", "--formula", "openecon/tap/opencode"])
+    if (tapFormula.includes("opencode")) return "openecon/tap/opencode"
     const coreFormula = await text(["brew", "list", "--formula", "opencode"])
     if (coreFormula.includes("opencode")) return "opencode"
     return "opencode"
@@ -183,12 +183,12 @@ export namespace Installation {
           ...process.env,
         }
         if (formula.includes("/")) {
-          const tap = await Process.run(["brew", "tap", "anomalyco/tap"], { env, nothrow: true })
+          const tap = await Process.run(["brew", "tap", "openecon/tap"], { env, nothrow: true })
           if (tap.code !== 0) {
             result = tap
             break
           }
-          const repo = await Process.text(["brew", "--repo", "anomalyco/tap"], { env, nothrow: true })
+          const repo = await Process.text(["brew", "--repo", "openecon/tap"], { env, nothrow: true })
           if (repo.code !== 0) {
             result = repo
             break
@@ -293,7 +293,7 @@ export namespace Installation {
         .then((data: any) => data.version)
     }
 
-    return fetch("https://api.github.com/repos/anomalyco/opencode/releases/latest")
+    return fetch("https://api.github.com/repos/openecon/opencode/releases/latest")
       .then((res) => {
         if (!res.ok) throw new Error(res.statusText)
         return res.json()

@@ -35,7 +35,7 @@ export const subjects = createSubjects({
 
 const MY_THEME: Theme = {
   ...THEME_OPENAUTH,
-  logo: "https://opencode.ai/favicon-v3.svg",
+  logo: "https://openecon.ai/favicon-v3.svg",
 }
 
 export default {
@@ -137,7 +137,7 @@ export default {
         if (!email) throw new Error("No email found")
         if (!subject) throw new Error("No subject found")
 
-        if (Resource.App.stage !== "production" && !email.endsWith("@anoma.ly")) {
+        if (Resource.App.stage !== "production" && !email.endsWith("@openecon.ai")) {
           throw new Error("Invalid email")
         }
 

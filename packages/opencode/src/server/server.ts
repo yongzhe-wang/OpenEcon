@@ -118,7 +118,7 @@ export namespace Server {
             )
               return input
 
-            // *.opencode.ai (https only, adjust if needed)
+            // *.openecon.ai (https only, adjust if needed)
             if (/^https:\/\/([a-z0-9-]+\.)*opencode\.ai$/.test(input)) {
               return input
             }
@@ -589,11 +589,11 @@ export namespace Server {
       .all("/*", async (c) => {
         const path = c.req.path
 
-        const response = await proxy(`https://app.opencode.ai${path}`, {
+        const response = await proxy(`https://app.openecon.ai${path}`, {
           ...c.req,
           headers: {
             ...c.req.raw.headers,
-            host: "app.opencode.ai",
+            host: "app.openecon.ai",
           },
         })
         response.headers.set(

@@ -4,10 +4,10 @@
   "version": "1.2.27",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://opencode.ai",
+  "homepage": "",
   "author": {
-    "name": "OpenCode",
-    "email": "hello@opencode.ai"
+    "name": "OpenEcon",
+    "email": ""
   },
   "scripts": {
     "typecheck": "tsgo -b",

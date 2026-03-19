@@ -134,7 +134,14 @@ export const TuiThreadCommand = cmd({
         ),
       })
       worker.onerror = (e) => {
-        Log.Default.error(e)
+        // Log structured worker error details so startup crashes are diagnosable.
+        Log.Default.error("worker error", {
+          message: e.message,
+          filename: e.filename,
+          lineno: e.lineno,
+          colno: e.colno,
+          error: e.error instanceof Error ? e.error.message : e.error,
+        })
       }
 
       const client = Rpc.client<typeof rpc>(worker)

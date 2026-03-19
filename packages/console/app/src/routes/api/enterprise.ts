@@ -51,7 +51,7 @@ ${body.phone ? `${body.phone}<br>` : ""}`.trim()
         message: body.message,
       }),
       AWS.sendEmail({
-        to: "contact@anoma.ly",
+        to: "contact@openecon.ai",
         subject: `Enterprise Inquiry from ${body.name}`,
         body: emailContent,
         replyTo: body.email,

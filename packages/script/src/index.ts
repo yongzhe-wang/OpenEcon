@@ -49,11 +49,16 @@ const VERSION = await (async () => {
 
 const bot = ["actions-user", "opencode", "opencode-agent[bot]"]
 const teamPath = path.resolve(import.meta.dir, "../../../.github/TEAM_MEMBERS")
+const members = await Bun.file(teamPath)
+  .text()
+  .then((x) => x.split(/\r?\n/).map((x) => x.trim()))
+  .then((x) => x.filter((x) => x && !x.startsWith("#")))
+  .catch(() => {
+    // TEAM_MEMBERS is optional in private forks; fallback keeps build scripts usable.
+    return []
+  })
 const team = [
-  ...(await Bun.file(teamPath)
-    .text()
-    .then((x) => x.split(/\r?\n/).map((x) => x.trim()))
-    .then((x) => x.filter((x) => x && !x.startsWith("#")))),
+  ...members,
   ...bot,
 ]
 

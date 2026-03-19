@@ -15,7 +15,7 @@ import {
   buttonText,
 } from "../styles"
 
-const CONSOLE_URL = "https://opencode.ai/"
+const CONSOLE_URL = "https://openecon.ai/"
 
 interface InviteEmailProps {
   inviter: string
@@ -24,7 +24,7 @@ interface InviteEmailProps {
   assetsUrl: string
 }
 export const InviteEmail = ({
-  inviter = "test@anoma.ly",
+  inviter = "test@openecon.ai",
   workspaceID = "wrk_01K6XFY7V53T8XN0A7X8G9BTN3",
   workspaceName = "anomaly",
   assetsUrl = `${CONSOLE_URL}email`,
