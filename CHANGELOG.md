@@ -10,3 +10,7 @@
 - Updated shared UI branding component in `packages/ui/src/components/logo.tsx` so `Mark`, `Splash`, and `Logo` render the new `E` mark and OpenEcon wordmark geometry in desktop/app views.
 - Regenerated desktop dev icon assets in `packages/desktop/src-tauri/icons/dev/*` to use a green background with a white `E` mark, including rebuilt `icon.icns` for macOS Dock.
 - Added `packages/desktop/scripts/generate_dev_icons.py` utility to reproducibly regenerate the green OpenEcon dev icon set.
+- Expanded `packages/desktop/scripts/generate_dev_icons.py` to regenerate `dev`, `prod`, and `beta` icon sets consistently so all Tauri channels use the same green `E` icon.
+- Enhanced `packages/desktop/scripts/generate_dev_icons.py` to render a layered green gradient background (with highlight) so the desktop icon no longer appears as flat solid green.
+- Refined `packages/desktop/scripts/generate_dev_icons.py` to match the provided reference icon style more closely: rounded glossy gradient tile, subtle blueprint grid/rings, and beveled white `E` with shadow.
+- Updated `packages/desktop/scripts/generate_dev_icons.py` to also generate root `src-tauri/icons/*` defaults (not only `dev/prod/beta`) so Tauri dev runtime no longer shows a blank/missing app icon.

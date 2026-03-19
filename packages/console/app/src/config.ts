@@ -5,25 +5,25 @@ export const config = {
   // Base URL
   baseUrl: "https://openecon.ai",
 
-  // GitHub
+  // Repository (placeholder)
   github: {
-    repoUrl: "https://github.com/openecon/opencode",
+    repoUrl: "",
     starsFormatted: {
-      compact: "120K",
-      full: "120,000",
+      compact: "",
+      full: "",
     },
   },
 
   // Social links
   social: {
-    twitter: "https://x.com/opencode",
-    discord: "https://discord.gg/openecon",
+    twitter: "",
+    discord: "",
   },
 
-  // Static stats (used on landing page)
+  // Static stats
   stats: {
-    contributors: "800",
-    commits: "10,000",
-    monthlyUsers: "5M",
+    contributors: "",
+    commits: "",
+    monthlyUsers: "",
   },
 } as const
