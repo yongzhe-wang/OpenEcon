@@ -1,7 +1,7 @@
 [package]
-name = "opencode-desktop"
+name = "openecon-desktop"
 version = "0.0.0"
-description = "The open source AI coding agent"
+description = "AI-powered development tool"
 authors = ["OpenEcon"]
 edition = "2024"
 

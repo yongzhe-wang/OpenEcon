@@ -1,6 +1,6 @@
-# OpenCode Desktop
+# OpenEcon Desktop
 
-Native OpenCode desktop app, built with Tauri v2.
+Native OpenEcon desktop app, built with Tauri v2.
 
 ## Development
 

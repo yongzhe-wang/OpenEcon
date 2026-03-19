@@ -7,7 +7,7 @@ const channel = (() => {
 })()
 
 const getBase = (): Configuration => ({
-  artifactName: "opencode-electron-${os}-${arch}.${ext}",
+  artifactName: "openecon-electron-${os}-${arch}.${ext}",
   directories: {
     output: "dist",
     buildResources: "resources",
@@ -40,7 +40,7 @@ const getBase = (): Configuration => ({
   },
   protocols: {
     name: "OpenEcon",
-    schemes: ["opencode"],
+    schemes: ["openecon"],
   },
   win: {
     icon: `resources/icons/icon.ico`,
@@ -68,7 +68,7 @@ function getConfig() {
         ...base,
         appId: "ai.openecon.desktop.dev",
         productName: "OpenEcon Dev",
-        rpm: { packageName: "opencode-dev" },
+        rpm: { packageName: "openecon-dev" },
       }
     }
     case "beta": {
@@ -76,9 +76,9 @@ function getConfig() {
         ...base,
         appId: "ai.openecon.desktop.beta",
         productName: "OpenEcon Beta",
-        protocols: { name: "OpenCode Beta", schemes: ["opencode"] },
+        protocols: { name: "OpenEcon Beta", schemes: ["openecon"] },
         publish: undefined,
-        rpm: { packageName: "opencode-beta" },
+        rpm: { packageName: "openecon-beta" },
       }
     }
     case "prod": {
@@ -86,9 +86,9 @@ function getConfig() {
         ...base,
         appId: "ai.openecon.desktop",
         productName: "OpenEcon",
-        protocols: { name: "OpenEcon", schemes: ["opencode"] },
+        protocols: { name: "OpenEcon", schemes: ["openecon"] },
         publish: undefined,
-        rpm: { packageName: "opencode" },
+        rpm: { packageName: "openecon" },
       }
     }
   }

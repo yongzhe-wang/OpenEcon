@@ -705,7 +705,7 @@ export default function Page() {
   })
   const sessionEmptyKey = createMemo(() => {
     const project = sync.project
-    if (project && !project.vcs) return "session.review.noVcs"
+    if (project && !project.vcs) return "session.review.empty"
     if (sync.data.config.snapshot === false) return "session.review.noSnapshot"
     return "session.review.empty"
   })
@@ -727,27 +727,6 @@ export default function Page() {
       return
     }
     globalSync.set("project", [...list, next])
-  }
-
-  function initGit() {
-    if (ui.git) return
-    setUi("git", true)
-    void sdk.client.project
-      .initGit()
-      .then((x) => {
-        if (!x.data) return
-        upsert(x.data)
-      })
-      .catch((err) => {
-        showToast({
-          variant: "error",
-          title: language.t("common.requestFailed"),
-          description: formatServerError(err, language.t),
-        })
-      })
-      .finally(() => {
-        setUi("git", false)
-      })
   }
 
   let inputRef!: HTMLDivElement
@@ -1095,24 +1074,6 @@ export default function Page() {
 
     if (hasSessionReview() && !diffsReady()) {
       return <div class={input.loadingClass}>{language.t("session.review.loadingChanges")}</div>
-    }
-
-    if (sessionEmptyKey() === "session.review.noVcs") {
-      return (
-        <div class={input.emptyClass}>
-          <div class="flex flex-col gap-3">
-            <div class="text-14-medium text-text-strong">{language.t("session.review.noVcs.createGit.title")}</div>
-            <div class="text-14-regular text-text-base max-w-md" style={{ "line-height": "var(--line-height-normal)" }}>
-              {language.t("session.review.noVcs.createGit.description")}
-            </div>
-          </div>
-          <Button size="large" disabled={ui.git} onClick={initGit}>
-            {ui.git
-              ? language.t("session.review.noVcs.createGit.actionLoading")
-              : language.t("session.review.noVcs.createGit.action")}
-          </Button>
-        </div>
-      )
     }
 
     return (

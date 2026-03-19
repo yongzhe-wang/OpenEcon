@@ -33,9 +33,7 @@ def make_base() -> Image.Image:
         )
         gdraw.line((0, y, 1024, y), fill=color)
 
-    # Add top highlight and lower vignette to match the glossy tile feeling.
-    gdraw.ellipse((120, 40, 940, 640), fill=(255, 255, 255, 42))
-    gdraw.ellipse((120, 520, 940, 1080), fill=(0, 120, 80, 35))
+    # No sheen - keep clean gradient.
     img.paste(gradient, (0, 0), mask)
 
     # Add subtle blueprint grid lines on top of the gradient background.
@@ -43,9 +41,9 @@ def make_base() -> Image.Image:
     g = ImageDraw.Draw(grid)
     step = 96
     for x in range(pad + 8, 1024 - pad, step):
-        g.line((x, pad + 8, x, 1024 - pad - 8), fill=(210, 245, 220, 60), width=2)
+        g.line((x, pad + 8, x, 1024 - pad - 8), fill=(210, 245, 220, 25), width=1)
     for y in range(pad + 8, 1024 - pad, step):
-        g.line((pad + 8, y, 1024 - pad - 8, y), fill=(210, 245, 220, 60), width=2)
+        g.line((pad + 8, y, 1024 - pad - 8, y), fill=(210, 245, 220, 25), width=1)
     img.alpha_composite(grid)
 
     # Add soft circular construction rings as in the reference icon.
@@ -53,7 +51,7 @@ def make_base() -> Image.Image:
     r = ImageDraw.Draw(rings)
     cx = cy = 512
     for radius in [340, 245, 145]:
-        r.ellipse((cx - radius, cy - radius, cx + radius, cy + radius), outline=(220, 248, 228, 72), width=4)
+        r.ellipse((cx - radius, cy - radius, cx + radius, cy + radius), outline=(220, 248, 228, 28), width=2)
     img.alpha_composite(rings)
 
     # Add a thin bright border for the rounded-square tile edge.
@@ -63,44 +61,50 @@ def make_base() -> Image.Image:
     b.rounded_rectangle((pad, pad, 1024 - pad, 1024 - pad), radius=190, outline=(35, 140, 90, 90), width=3)
     img.alpha_composite(border)
 
-    # Draw a beveled white E with soft drop shadow to match the exact style request.
-    ex = 292
-    ey = 246
-    ew = 430
-    eh = 528
-    et = 98
+    # Draw a 3D extruded white E matching the reference icon.
+    # E fits comfortably inside the rounded-square with good margins.
+    ex = 300          # left edge x
+    ey = 260          # top edge y
+    ew = 420          # total width of the E
+    eh = 510          # total height of the E
+    et = 100          # stroke thickness
+    mid_w = ew - 80   # middle bar is shorter
 
-    # Shadow layer behind the E.
-    shadow = Image.new("RGBA", (1024, 1024), (0, 0, 0, 0))
-    s = ImageDraw.Draw(shadow)
-    ox = 10
-    oy = 14
-    s.rectangle((ex + ox, ey + oy, ex + et + ox, ey + eh + oy), fill=(0, 0, 0, 55))
-    s.rectangle((ex + ox, ey + oy, ex + ew + ox, ey + et + oy), fill=(0, 0, 0, 55))
-    s.rectangle((ex + ox, ey + eh // 2 - et // 2 + oy, ex + ew - 86 + ox, ey + eh // 2 + et // 2 + oy), fill=(0, 0, 0, 55))
-    s.rectangle((ex + ox, ey + eh - et + oy, ex + ew + ox, ey + eh + oy), fill=(0, 0, 0, 55))
-    img.alpha_composite(shadow)
+    # Depth / extrusion offset (bottom-right direction).
+    dx = 14
+    dy = 16
+    depth_color = (20, 90, 45, 180)  # dark green for 3D depth
 
-    # Front face of the E.
-    draw.rectangle((ex, ey, ex + et, ey + eh), fill=(246, 249, 242, 255))
-    draw.rectangle((ex, ey, ex + ew, ey + et), fill=(246, 249, 242, 255))
-    draw.rectangle((ex, ey + eh // 2 - et // 2, ex + ew - 86, ey + eh // 2 + et // 2), fill=(246, 249, 242, 255))
-    draw.rectangle((ex, ey + eh - et, ex + ew, ey + eh), fill=(246, 249, 242, 255))
+    # Define the four rects that make up the E (left bar, top bar, mid bar, bottom bar).
+    bars_front = [
+        (ex, ey, ex + et, ey + eh),                               # left vertical
+        (ex, ey, ex + ew, ey + et),                                # top horizontal
+        (ex + et, ey + eh // 2 - et // 2, ex + mid_w, ey + eh // 2 + et // 2),  # middle
+        (ex, ey + eh - et, ex + ew, ey + eh),                     # bottom horizontal
+    ]
 
-    # Bevel / edge shading for depth.
-    draw.line((ex, ey + eh, ex + ew, ey + eh), fill=(182, 191, 174, 255), width=5)
-    draw.line((ex + ew, ey, ex + ew, ey + et), fill=(182, 191, 174, 255), width=5)
-    draw.line((ex + ew - 86, ey + eh // 2 + et // 2, ex + ew - 86, ey + eh // 2 - et // 2), fill=(182, 191, 174, 255), width=4)
+    # Draw the 3D extrusion layer first (offset copy in depth_color).
+    extrusion = Image.new("RGBA", (1024, 1024), (0, 0, 0, 0))
+    ed = ImageDraw.Draw(extrusion)
+    for x1, y1, x2, y2 in bars_front:
+        ed.rectangle((x1 + dx, y1 + dy, x2 + dx, y2 + dy), fill=depth_color)
+    img.alpha_composite(extrusion)
 
-    # Top-left soft highlight line on E for embossed look.
-    draw.line((ex + 6, ey + 6, ex + ew - 8, ey + 6), fill=(255, 255, 255, 180), width=4)
-    draw.line((ex + 6, ey + 6, ex + 6, ey + eh - 8), fill=(255, 255, 255, 160), width=4)
+    # Front face of the E (white).
+    face_color = (250, 253, 248, 255)
+    for x1, y1, x2, y2 in bars_front:
+        draw.rectangle((x1, y1, x2, y2), fill=face_color)
 
-    # Gentle center glow behind E to increase contrast.
-    halo = Image.new("RGBA", (1024, 1024), (0, 0, 0, 0))
-    hdraw = ImageDraw.Draw(halo)
-    hdraw.ellipse((250, 230, 790, 800), fill=(255, 255, 255, 35))
-    img.alpha_composite(halo)
+    # Subtle bottom/right bevel on front face for depth.
+    bevel = (210, 218, 204, 255)
+    draw.line((ex, ey + eh, ex + ew, ey + eh), fill=bevel, width=3)
+    draw.line((ex + ew, ey, ex + ew, ey + et), fill=bevel, width=3)
+    draw.line((ex + ew, ey + eh - et, ex + ew, ey + eh), fill=bevel, width=3)
+    draw.line((ex + mid_w, ey + eh // 2 - et // 2, ex + mid_w, ey + eh // 2 + et // 2), fill=bevel, width=3)
+
+    # Top-left highlight on E for embossed look.
+    draw.line((ex + 3, ey + 3, ex + ew - 3, ey + 3), fill=(255, 255, 255, 180), width=3)
+    draw.line((ex + 3, ey + 3, ex + 3, ey + eh - 3), fill=(255, 255, 255, 150), width=3)
     return img
 
 

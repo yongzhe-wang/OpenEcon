@@ -16,7 +16,7 @@ export function createMenu(deps: Deps) {
 
   const template: Electron.MenuItemConstructorOptions[] = [
     {
-      label: "OpenCode",
+      label: "OpenEcon",
       submenu: [
         { role: "about" },
         {
@@ -101,7 +101,7 @@ export function createMenu(deps: Deps) {
     {
       label: "Help",
       submenu: [
-        { label: "OpenCode Documentation", click: () => shell.openExternal("https://openecon.ai/docs") },
+        { label: "OpenEcon Documentation", click: () => shell.openExternal("https://openecon.ai/docs") },
         { label: "Support Forum", click: () => shell.openExternal("https://discord.com/invite/opencode") },
         { type: "separator" },
         { type: "separator" },
