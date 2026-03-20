@@ -14,7 +14,6 @@ export namespace ProviderError {
     /maximum prompt length is \d+/i, // xAI (Grok)
     /reduce the length of the messages/i, // Groq
     /maximum context length is \d+ tokens/i, // OpenRouter, DeepSeek, vLLM
-    /exceeds the limit of \d+/i, // GitHub Copilot
     /exceeds the available context size/i, // llama.cpp server
     /greater than the context length/i, // LM Studio
     /context window exceeds limit/i, // MiniMax

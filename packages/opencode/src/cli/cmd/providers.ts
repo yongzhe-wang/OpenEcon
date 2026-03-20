@@ -323,11 +323,10 @@ export const ProvidersLoginCommand = cmd({
         const priority: Record<string, number> = {
           opencode: 0,
           openai: 1,
-          "github-copilot": 2,
-          google: 3,
-          anthropic: 4,
-          openrouter: 5,
-          vercel: 6,
+          google: 2,
+          anthropic: 3,
+          openrouter: 4,
+          vercel: 5,
         }
         const pluginProviders = resolvePluginProviders({
           hooks: await Plugin.list(),

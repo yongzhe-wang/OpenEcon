@@ -35,7 +35,7 @@ Locale guidance does not override code/command preservation rules or the global 
 
 ---
 
-# Do-Not-Translate Terms (OpenCode Docs)
+# Do-Not-Translate Terms (OpenEcon Docs)
 
 Generated from: `packages/web/src/content/docs/*.mdx` (default English docs)
 Generated on: 2026-02-10
@@ -152,15 +152,15 @@ OAuth
 Ollama integration docs
 OpenAI's Data Policies
 OpenChamber
-OpenCode
-OpenCode config
-OpenCode Config
-OpenCode TUI with the opencode theme
-OpenCode Web - Active Session
-OpenCode Web - New Session
-OpenCode Web - See Servers
-OpenCode Zen
-OpenCode-Obsidian
+OpenEcon
+OpenEcon config
+OpenEcon Config
+OpenEcon TUI with the opencode theme
+OpenEcon Web - Active Session
+OpenEcon Web - New Session
+OpenEcon Web - See Servers
+OpenEcon Zen
+OpenEcon-Obsidian
 OpenRouter dashboard
 OpenWork
 OVHcloud panel
@@ -301,7 +301,7 @@ NoeFabris
 OpenAI
 OpenAPI
 OpenChamber
-OpenCode
+OpenEcon
 OpenRouter
 OpenTUI
 OpenWork
@@ -325,7 +325,7 @@ xAI
 ZenMux
 ```
 
-## OpenCode CLI commands (as shown in docs)
+## OpenEcon CLI commands (as shown in docs)
 
 ```text
 opencode

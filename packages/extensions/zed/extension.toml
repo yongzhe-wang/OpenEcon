@@ -1,5 +1,5 @@
 id = "opencode"
-name = "OpenCode"
+name = "OpenEcon"
 description = "The open source coding agent."
 version = "1.2.27"
 schema_version = 1
@@ -7,7 +7,7 @@ authors = ["OpenEcon"]
 repository = ""
 
 [agent_servers.opencode]
-name = "OpenCode"
+name = "OpenEcon"
 icon = "./icons/opencode.svg"
 
 [agent_servers.opencode.targets.darwin-aarch64]
